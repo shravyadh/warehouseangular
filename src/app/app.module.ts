@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/login.service';
 import { AdminComponent } from './components/admin/admin.component';
+import { FormsModule } from '@angular/forms';
+import { AdminRoutingModule } from './admin-routing/admin-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AdminComponent } from './components/admin/admin.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    AdminRoutingModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

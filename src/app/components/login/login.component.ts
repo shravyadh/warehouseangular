@@ -3,6 +3,7 @@ import { User } from 'src/app/models/user';
 import { LoginService } from 'src/app/services/login.service'
 import { Role } from 'src/app/models/role';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,13 +20,18 @@ export class LoginComponent implements OnInit {
 
   validate(user : User ) : void{
     this.loginService.validate(user).subscribe(role => {
-      if(this.role.code == 'AD')
+      this.role= role 
+      if(role.code == 'AD')
       {
         
       }
-      else if(this.role.code == 'MAN'){ 
-
+      else if(role.code == 'MANF')
+      {
+       
       }
-    })
+      else{
+        
+      }
+     })
   }
 }

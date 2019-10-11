@@ -8,12 +8,19 @@ import { LoginService } from './services/login.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { FormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing/admin-routing.module';
+import { ItemListComponent } from '../app/components/item-list/item-list.component';
+import { MerchantComponent } from './components/merchant/merchant.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    ItemListComponent,
+    MerchantComponent,
+    
   ],
   imports: [
     BrowserModule,

@@ -17,7 +17,7 @@ export const environment = {
 export const SERVER_HOST = 'http://localhost:8181/';
 export const API_LOGIN_PATH = SERVER_HOST + 'login';
 
-export const Api_Get_Customers = SERVER_HOST + 'customers/{id}';
+export const Api_Get_Customer = SERVER_HOST + 'customer/';
 export const Api_Get_Items = SERVER_HOST + 'items';
 export const Api_Get_Purchase_Orders = SERVER_HOST + 'purchases/{date}';
 

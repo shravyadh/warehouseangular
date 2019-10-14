@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ItemListService } from 'src/app/services/adminservices/item-list.service';
+import { Item } from 'src/app/models/item';
 
 @Component({
   selector: 'app-admin',
@@ -7,14 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
-  constructor(private router : Router) { }
+  
+  item : Item[]
+  constructor(private router : Router, private itemListService: ItemListService) { }
 
   ngOnInit() {
   }
 
   clicked() {
-    sessionStorage.removeItem('role')
+    sessionStorage.removeItem('role');
     this.router.navigate(['login'])
   }
+  
 }

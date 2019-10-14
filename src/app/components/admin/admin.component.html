@@ -1,7 +1,7 @@
 <div>
     <ul>
-        <li><a routerLink = "items"  routerLinkActive="active-link">List Items</a></li>
-        <li>Display customer details</li>
+        <li><a routerLink = "items"  routerLinkActive="active-link" >List Items</a></li>
+        <li><a routerLink = "customer" routerLinkActive="active-link">Display customer details</a></li>
         <li>Add Customer</li>
         <li>Delete Customer</li>
         <li>Delete Item</li>
@@ -11,3 +11,4 @@
         <button (click) = "clicked()"><li>Logout</li></button>
     </ul>
 </div>
+<router-outlet></router-outlet>

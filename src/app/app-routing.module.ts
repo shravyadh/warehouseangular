@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { AdminRoutingModule } from './admin-routing/admin-routing.module'
+import { AdminRoutingModule } from './components/admin/admin-routing.module'
 import { MerchantComponent } from './components/merchant/merchant.component';
 
 

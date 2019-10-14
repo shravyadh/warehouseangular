@@ -4,12 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { LoginService } from './services/login.service';
+import { LoginService } from './services/loginservice/login.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { FormsModule } from '@angular/forms';
-import { AdminRoutingModule } from './admin-routing/admin-routing.module';
+// import { AdminRoutingModule } from './admin-routing/admin-routing.module';
 import { ItemListComponent } from '../app/components/item-list/item-list.component';
 import { MerchantComponent } from './components/merchant/merchant.component';
+import { AdminRoutingModule } from './components/admin/admin-routing.module';
+import { CustomerComponent } from './components/customer/customer.component';
+import { GetCustomerComponent } from './components/get-customer/get-customer.component';
 
 
 
@@ -20,6 +23,8 @@ import { MerchantComponent } from './components/merchant/merchant.component';
     AdminComponent,
     ItemListComponent,
     MerchantComponent,
+    CustomerComponent,
+    GetCustomerComponent,
     
   ],
   imports: [
@@ -27,7 +32,7 @@ import { MerchantComponent } from './components/merchant/merchant.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    AdminRoutingModule
+    AdminRoutingModule,
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

@@ -1,0 +1,52 @@
+<div style="margin-left: 25%; padding: 1px 16px; height: 1000px;">
+    <table style="width: 80%">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Customer Name
+                </th>
+                <th>
+                    Phone Number
+                </th>
+                <th>
+                    City
+                </th>
+                <th>
+                    Pincode
+                </th>
+                <th>
+                    Country
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="customer">
+
+                <td>
+                    {{ customer.id }}
+                </td>
+                <td>
+                    {{ customer.name }}
+                </td>
+                <td>
+                    {{ customer.phone_number }}
+                </td>
+                <td>
+                    {{ customer.address.city }}
+                </td>
+                <td>
+                    {{ customer.address.pincode }}
+                </td>
+                <td>
+                    {{ customer.address.country.name }}
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- {{ customer.id }} -->

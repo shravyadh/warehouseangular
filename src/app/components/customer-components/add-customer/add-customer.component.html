@@ -1,0 +1,55 @@
+<form [formGroup]="profileForm" id="f">
+    <div>
+        <label>
+            Name:
+        </label>
+        <input type="text" formControlName="name">
+    </div>
+
+    <br>
+
+    <div>
+        <label>
+            Phone Number:
+        </label>
+        <input type="text" formControlName="phone_number">
+    </div>
+
+    <br>
+
+    <div formGroupName="address">
+
+        <div>
+            <label>
+                City:
+            </label>
+            <input type="text" formControlName="city">
+        </div>
+
+        <br>
+
+        <div>
+            <label>
+                Pin Code:
+            </label>
+            <input type="text" formControlName="pincode">
+        </div>
+
+        <br>
+
+        <div>
+            <label>
+                Country:
+                <select formControlName="country" >
+                    <option *ngFor="let country of countries" [ngValue]="country">
+                        {{country.name}}
+                    </option>
+                </select>
+            </label>
+        </div>
+    </div>
+    <br>
+
+    <input type="submit" value="submit" (click)="addCustomer(profileForm.value)">
+
+</form>

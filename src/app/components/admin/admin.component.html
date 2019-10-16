@@ -1,14 +1,17 @@
 <div>
+    <h2>Welcome {{admin.person.role.name}}</h2>
     <ul>
-        <li><a routerLink = "items"  routerLinkActive="active-link" >List Items</a></li>
-        <li><a routerLink = "customer" routerLinkActive="active-link">Display customer details</a></li>
-        <li>Add Customer</li>
-        <li>Delete Customer</li>
-        <li>Delete Item</li>
-        <li>Add stock</li>
-        <li>Display Purchase Details</li>
-        <li>Display Item Orders</li>
-        <button (click) = "clicked()"><li>Logout</li></button>
+        <li><a routerLink="items" routerLinkActive="active-link">List Items</a></li>
+        <li><a routerLink="customer" routerLinkActive="active-link">Display customer details</a></li>
+        <li><a routerLink="addcustomer" routerLinkActivate="active-link">Add Customer</a></li>
+        <li><a routerLink="deletecustomer" routerLinkActivate="activate-link">Delete Customer</a></li>
+        <li><a routerLink="deleteitem" routerLinkActivate="activate-link">Delete Item</a></li>
+        <li><a routerLink="addstock" routerLinkActivate="activate-link">Add Stock</a></li>
+        <li><a routerLink="purchasedetails" routerLinkActivate="activate-link">Display Purchase Details</a></li>
+        <!-- <li><a routerLink="disply" routerLinkActivate="activate-link"></a>Display Item Orders</a></li> -->
+        <button (click)="logout()">
+            <li>Logout</li>
+        </button>
     </ul>
 </div>
 <router-outlet></router-outlet>

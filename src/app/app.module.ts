@@ -7,12 +7,17 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/loginservice/login.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { FormsModule } from '@angular/forms';
-// import { AdminRoutingModule } from './admin-routing/admin-routing.module';
-import { ItemListComponent } from '../app/components/item-list/item-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ItemListComponent } from './components/item-components/item-list/item-list.component';
 import { MerchantComponent } from './components/merchant/merchant.component';
 import { AdminRoutingModule } from './components/admin/admin-routing.module';
-import { CustomerComponent } from './components/customer/customer.component';
-import { GetCustomerComponent } from './components/get-customer/get-customer.component';
+import { CustomerComponent } from './components/customer-components/customer/customer.component';
+import { GetCustomerComponent } from './components/customer-components/get-customer/get-customer.component';
+import { AddCustomerComponent } from './components/customer-components/add-customer/add-customer.component';
+import { DeleteCustomerComponent } from './components/customer-components/delete-customer/delete-customer.component';
+import { DeleteItemComponent } from './components/item-components/delete-item/delete-item.component';
+import { AddStockComponent } from './components/item-components/add-stock/add-stock.component';
+import { PurchaseDetailsComponent } from './components/item-components/purchase-details/purchase-details.component';
 
 
 
@@ -25,16 +30,22 @@ import { GetCustomerComponent } from './components/get-customer/get-customer.com
     MerchantComponent,
     CustomerComponent,
     GetCustomerComponent,
-    
+    AddCustomerComponent,
+    DeleteCustomerComponent,
+    DeleteItemComponent,
+    AddStockComponent,
+    PurchaseDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     AdminRoutingModule,
   ],
   providers: [LoginService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, AddCustomerComponent]
 })
 export class AppModule { }

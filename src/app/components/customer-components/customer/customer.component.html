@@ -1,0 +1,10 @@
+<form #GetCustomer="ngForm">
+        <div >
+                <label>Customer Id:</label>
+                <input type="text" #id name="id" placeholder="enter id" ngModel required>
+                <br>
+                <!-- <input type = "submit" value = "submit" (click) = "getCustomer(id.value)" > -->
+                <app-get-customer [id] = 'id.value'></app-get-customer>
+        </div>
+        <!-- <router-outlet></router-outlet> -->
+</form>

@@ -1,0 +1,7 @@
+<form #DeleteItem = "ngForm" style="margin-left : 30%">
+        <label>
+            ID :
+        </label>
+        <input type="text" name="id" ngModel><br>
+        <input type="submit" value="submit" (click)="deleteItem(DeleteItem.value.id)">
+</form>

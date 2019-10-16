@@ -11,29 +11,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
-  role: Role;
-  invalidLogin =false;
 
-  constructor(private router: Router, private loginService : LoginService) { }
+  user: User;
+  invalidLogin = false;
+
+  constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit() {
-    if(sessionStorage.getItem("role") != undefined || sessionStorage.getItem("role") != null) {
-      this.router.navigate(["admin"])
-    }
+    // if (sessionStorage.getItem("role") != undefined || sessionStorage.getItem("role") != null) {
+    //   this.router.navigate(["admin"])
   }
 
-  validate(user : User ) : void{
-    this.loginService.validate(user).subscribe(role => {
-      sessionStorage.setItem('role', role.code)
-      if(role.code == 'AD')
-      {
-        this.router.navigate(['admin'])
+
+  validate(user: User): void {
+    this.loginService.validate(user).subscribe(user => {
+      if (user.person.role.code == 'AD') {
+        sessionStorage.setItem('admin', JSON.stringify(user));
+        this.router.navigate(['admin']);
       }
-      else if(role.code == 'MANF')
-      {
-        this.router.navigate(['merchant'])
+      else if (user.person.role.code== 'MANF') {
+        sessionStorage.setItem('user', JSON.stringify(user));
+        this.router.navigate(['merchant']);
       }
-     })
+    })
   }
 }

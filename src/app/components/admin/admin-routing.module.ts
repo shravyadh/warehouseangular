@@ -1,9 +1,14 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
-import { ItemListComponent } from '../item-list/item-list.component';
-import { CustomerComponent } from '../customer/customer.component';
-import { GetCustomerComponent } from '../get-customer/get-customer.component';
+import { ItemListComponent } from '../item-components/item-list/item-list.component';
+import { CustomerComponent } from '../customer-components/customer/customer.component';
+import { GetCustomerComponent } from '../customer-components/get-customer/get-customer.component';
+import { AddCustomerComponent } from '../customer-components/add-customer/add-customer.component';
+import { DeleteCustomerComponent } from '../customer-components/delete-customer/delete-customer.component';
+import { DeleteItemComponent } from '../item-components/delete-item/delete-item.component';
+import { AddStockComponent } from '../item-components/add-stock/add-stock.component';
+import { PurchaseDetailsComponent } from '../item-components/purchase-details/purchase-details.component';
 
 
 const routes: Routes = [
@@ -14,7 +19,24 @@ const routes: Routes = [
         path: 'items', component: ItemListComponent
       },
       {
-        path: 'customer', component: CustomerComponent
+        path: 'customer', component: CustomerComponent, children: [
+          {path: 'getcustomer', component: GetCustomerComponent}
+        ]
+      },
+      {
+        path: 'addcustomer', component: AddCustomerComponent
+      },
+      {
+        path: 'deletecustomer', component: DeleteCustomerComponent
+      },
+      {
+        path: 'deleteitem', component: DeleteItemComponent
+      },
+      {
+        path: 'addstock', component: AddStockComponent
+      },
+      {
+        path: 'purchasedetails', component: PurchaseDetailsComponent
       }
     ]
   }

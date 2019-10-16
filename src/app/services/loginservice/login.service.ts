@@ -12,8 +12,9 @@ export class LoginService {
 
   constructor(private http : HttpClient) { }
 
-  validate( user : User ) : Observable<Role>
+  validate( user : User ) : Observable<User>
   {
+    
     return this.http.post<User>(API_LOGIN_PATH, user);
   }
 }

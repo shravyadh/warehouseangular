@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['admin']);
       }
       else if (user.person.role.code== 'MANF') {
-        sessionStorage.setItem('user', JSON.stringify(user));
+        sessionStorage.setItem('merchant', JSON.stringify(user));
         this.router.navigate(['merchant']);
       }
     })

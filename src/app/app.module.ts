@@ -18,6 +18,8 @@ import { DeleteCustomerComponent } from './components/customer-components/delete
 import { DeleteItemComponent } from './components/item-components/delete-item/delete-item.component';
 import { AddStockComponent } from './components/item-components/add-stock/add-stock.component';
 import { PurchaseDetailsComponent } from './components/item-components/purchase-details/purchase-details.component';
+import { MerchantRoutingModule } from './components/merchant/merchant-routing.module';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 
 
@@ -35,6 +37,7 @@ import { PurchaseDetailsComponent } from './components/item-components/purchase-
     DeleteItemComponent,
     AddStockComponent,
     PurchaseDetailsComponent,
+    ErrorPageComponent,
 
   ],
   imports: [
@@ -44,8 +47,9 @@ import { PurchaseDetailsComponent } from './components/item-components/purchase-
     FormsModule,
     ReactiveFormsModule,
     AdminRoutingModule,
+    MerchantRoutingModule,
   ],
   providers: [LoginService],
-  bootstrap: [AppComponent, AddCustomerComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

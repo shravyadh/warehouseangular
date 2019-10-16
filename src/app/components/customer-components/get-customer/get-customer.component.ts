@@ -20,7 +20,7 @@ export class GetCustomerComponent {
      
     this.customerService.getCustomer(this.id).subscribe(customer => {
       // console.log(customer);
-      
+      if(customer!=null)
       this.customer = customer
       // this.router.navigate[('getcustomer')]
       // console.log(this.customer);

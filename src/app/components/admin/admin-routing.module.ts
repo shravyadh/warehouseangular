@@ -9,11 +9,12 @@ import { DeleteCustomerComponent } from '../customer-components/delete-customer/
 import { DeleteItemComponent } from '../item-components/delete-item/delete-item.component';
 import { AddStockComponent } from '../item-components/add-stock/add-stock.component';
 import { PurchaseDetailsComponent } from '../item-components/purchase-details/purchase-details.component';
+import { AdminGuard } from 'src/app/guards/admin.guard';
 
 
 const routes: Routes = [
   {
-    path: 'admin', component: AdminComponent,
+    path: 'admin', component: AdminComponent, canActivate: [AdminGuard],
     children: [
       {
         path: 'items', component: ItemListComponent
@@ -44,6 +45,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AdminGuard]
 })
 export class AdminRoutingModule { }

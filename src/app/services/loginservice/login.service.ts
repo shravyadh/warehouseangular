@@ -10,11 +10,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  validate( user : User ) : Observable<User>
-  {
-    
+  validate(user: User): Observable<User> {
     return this.http.post<User>(API_LOGIN_PATH, user);
   }
 }
